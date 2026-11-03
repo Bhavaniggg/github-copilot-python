@@ -1,18 +1,81 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Sudoku Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sudoku</title>
   <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-  <h1>Sudoku Game</h1>
-  <div id="sudoku-board"></div>
-  <div class="controls">
-    <button id="new-game">New Game</button>
-    <button id="check-solution">Check Solution</button>
-    <span id="message"></span>
-  </div>
+  <header class="site-header">
+    <h1>Sudoku</h1>
+    <button id="theme-toggle" class="quiet-button" type="button" aria-pressed="false">
+      Dark mode
+    </button>
+  </header>
+
+  <main>
+    <section class="game" aria-label="Sudoku game">
+      <div class="game-toolbar">
+        <label class="difficulty-control" for="difficulty">
+          Difficulty
+          <select id="difficulty" name="difficulty">
+            <option>Easy</option>
+            <option selected>Medium</option>
+            <option>Hard</option>
+          </select>
+        </label>
+        <div class="clock" aria-live="off">
+          <span class="clock-label">Time</span>
+          <strong id="timer">00:00</strong>
+        </div>
+      </div>
+
+      <div id="sudoku-board" role="grid" aria-label="Sudoku board"></div>
+
+      <div class="controls">
+        <button id="new-game" type="button">New Game</button>
+        <button id="hint" class="secondary-button" type="button">Hint</button>
+        <button id="check-solution" class="secondary-button" type="button">Check</button>
+      </div>
+      <p id="message" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="leaderboard" aria-labelledby="leaderboard-title">
+      <div class="leaderboard-heading">
+        <div>
+          <p class="eyebrow">PERSONAL BESTS</p>
+          <h2 id="leaderboard-title">Top 10 Fastest Times</h2>
+        </div>
+        <span class="leaderboard-count" id="leaderboard-count">0 / 10</span>
+      </div>
+      <p id="leaderboard-empty">No times yet. Complete a puzzle to set your first record.</p>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th scope="col">#</th><th scope="col">Player</th><th scope="col">Time</th><th scope="col">Level</th></tr>
+          </thead>
+          <tbody id="leaderboard-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="completion-dialog" aria-labelledby="completion-title">
+    <form id="completion-form">
+      <p class="eyebrow">PUZZLE COMPLETE</p>
+      <h2 id="completion-title">Well solved.</h2>
+      <p class="completion-result">Your time <strong id="completion-time">00:00</strong></p>
+      <label class="name-control" for="player-name">Add your name to the leaderboard</label>
+      <input id="player-name" name="player-name" maxlength="24" autocomplete="name" required>
+      <p id="score-save-status" role="status"></p>
+      <div class="dialog-actions">
+        <button type="submit">Save time</button>
+        <button id="new-after-complete" class="secondary-button" type="button">New puzzle</button>
+      </div>
+    </form>
+  </dialog>
+
   <script src="/static/main.js"></script>
 </body>
 </html>

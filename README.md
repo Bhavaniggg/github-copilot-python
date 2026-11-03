@@ -58,3 +58,47 @@ Use GitHub Copilot to refactor the code for this game to add more advanced featu
 - The game should be responsive and work well on both desktop and mobile devices.
 - UI colors should be visually appealing and accessible.
 - Completed and correct puzzles should display a congratulatory message with the time taken and hints used and ask for the user's name for Top 10 times.
+
+
+---
+## My Implementation (Added for Submission)
+
+### How to Run App
+cd starter
+python app.py
+Open http://127.0.0.1:5000
+
+### How to Run Tests (Required)
+.\.venv\Scripts\python.exe -m pytest tests/test_app.py -v
+OR
+.\.venv\Scripts\python.exe -m pytest test_app.py -v
+
+Result: 8 passed in 0.29s
+Screenshot: Screenshots/initial_tests.png
+
+### Copilot Prompts Used (3 Prompts)
+
+**Prompt 1 - Test Setup**
+Set up pytest testing framework and write comprehensive tests for Sudoku game including API endpoints, puzzle generation, validation logic
+- Screenshot: Screenshots/copilot_test_setup.png
+
+**Prompt 2 - Unique Solution**
+Refactor Sudoku to ensure puzzle has only one unique solution. Create function count_solutions(board, limit=2) using backtracking
+- Screenshot: Screenshots/copilot_unique_solution.png - 30 steps completed
+
+**Prompt 3 - Game Features & Styling**
+Add game features: Timer, Hint, Check, Top 10 Fastest Times leaderboard using localStorage, dark mode toggle, style grid with alternating 3x3 colors, responsive layout
+- Screenshots: Screenshots/copilot_top10_localstorage.png and Screenshots/copilot_styling_grid.png
+
+### Features Completed from Project Instructions
+- ✅ Unique solution generator
+- ✅ Timer
+- ✅ Solution checker with event delegation
+- ✅ Difficulty selector (Easy/Medium/Hard)
+- ✅ Hint with unique colors + Check Puzzle
+- ✅ Immediate feedback for invalid entries
+- ✅ Top 10 scores in localStorage with name/time/hints/difficulty
+- ✅ Responsive + accessible colors + congratulatory message
+
+### Screenshots Folder
+All 5 required screenshots saved in Screenshots/

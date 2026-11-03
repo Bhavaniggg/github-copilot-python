@@ -102,3 +102,23 @@ Add game features: Timer, Hint, Check, Top 10 Fastest Times leaderboard using lo
 
 ### Screenshots Folder
 All 5 required screenshots saved in Screenshots/
+
+## Running Tests
+
+Install dependencies:
+
+pip install -r starter/requirements.txt
+
+Run automated tests:
+
+python -m pytest -v
+
+## Testing
+
+The project uses pytest for automated testing.
+
+Run tests using:
+
+python -m pytest -v
+
+Latest test result: 9 tests passed.

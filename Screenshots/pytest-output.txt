@@ -1,2 +1,17 @@
-.........                                                                [100%]
-9 passed in 0.27s
+============================= test session starts =============================
+platform win32 -- Python 3.14.8, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\bhava\OneDrive\Documents\GitHub\github-copilot-python\starter\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\bhava\OneDrive\Documents\GitHub\github-copilot-python
+collecting ... collected 9 items
+
+tests/test_app.py::test_home_route_returns_200 PASSED                    [ 11%]
+tests/test_app.py::test_sudoku_board_is_9x9 PASSED                       [ 22%]
+tests/test_app.py::test_unique_solution_count PASSED                     [ 33%]
+tests/test_app.py::test_solution_count_stops_at_limit PASSED             [ 44%]
+tests/test_app.py::test_generated_puzzle_has_unique_solution_and_expected_clues[Easy-40] PASSED [ 55%]
+tests/test_app.py::test_generated_puzzle_has_unique_solution_and_expected_clues[Medium-30] PASSED [ 66%]
+tests/test_app.py::test_generated_puzzle_has_unique_solution_and_expected_clues[Hard-22] PASSED [ 77%]
+tests/test_app.py::test_board_validation PASSED                          [ 88%]
+tests/test_app.py::test_hint_returns_solution_for_an_editable_cell PASSED [100%]
+
+============================== 9 passed in 0.57s ==============================
